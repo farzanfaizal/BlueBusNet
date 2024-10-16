@@ -6,7 +6,7 @@ SECRET_KEY = 'betsff(e3$v-n@gc53*afg^r36tiz$4#lujpjxub1!(@zkxfl9'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['bluebus-sryt.onrender.com']
+ALLOWED_HOSTS = ['bluebus-sryt.onrender.com','127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'custom_admin',  # Add this line
