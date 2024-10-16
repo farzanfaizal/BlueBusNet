@@ -1,0 +1,51 @@
+{% extends 'bookings/base.html' %}
+{% block content %}
+<div class="welcome-box">
+    <h2>Welcome to BlueBus</h2>
+    <p>Your one-stop solution for comfortable and reliable bus travel.</p>
+</div>
+
+<div class="slideshow-container">
+    <img src="/static/images/bus1.jpg" class="slideshow-image" alt="Bus 1">
+    <img src="/static/images/bus2.jpg" class="slideshow-image" alt="Bus 2">
+    <img src="/static/images/bus3.jpg" class="slideshow-image" alt="Bus 3">
+</div>
+
+<style>
+    .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        height: 300px; /* Adjust as needed */
+        overflow: hidden;
+    }
+    .slideshow-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .slideshow-image.active {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.slideshow-image');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        images[currentIndex].classList.add('active');
+        setInterval(showNextImage, 4000);
+    });
+</script>
+{% endblock %}

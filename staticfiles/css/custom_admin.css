@@ -1,0 +1,222 @@
+/* Blue Neon Theme with Mobile Responsiveness */
+body {
+    background-color: #000033;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#header {
+    background-color: #000066;
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+    padding: 10px 20px;
+}
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    font-size: 24px;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background-color: #000099;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    padding: 8px 10px;
+}
+
+div.breadcrumbs {
+    background-color: #000099;
+    color: #00ffff;
+    padding: 10px 20px;
+}
+
+a:link, a:visited {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background-color: #0000cc;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 5px #00ffff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover, input[type=submit]:hover, input[type=button]:hover {
+    background-color: #0000ff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background-color: #0000ff;
+}
+
+.button.default:hover, input[type=submit].default:hover {
+    background-color: #3333ff;
+}
+
+.module {
+    background-color: #000044;
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 5px #00ffff;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.form-row {
+    border-bottom: 1px solid #000099;
+    padding: 10px;
+}
+
+.dashboard .module table th {
+    background-color: #000066;
+}
+
+.dashboard .module table td a:link, .dashboard .module table td a:visited {
+    color: #00ffff;
+}
+
+.dashboard .module table td a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000033;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0000cc;
+    border: 1px solid #00ffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0000ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+
+    #header {
+        padding: 10px;
+    }
+
+    #branding h1, #branding h1 a:link, #branding h1 a:visited {
+        font-size: 20px;
+    }
+
+    .module h2, .module caption, .inline-group h2 {
+        font-size: 18px;
+    }
+
+    #content {
+        padding: 15px;
+    }
+
+    .form-row {
+        padding: 8px;
+    }
+
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        padding: 12px 20px;
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .submit-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .submit-row input {
+        margin-left: 0;
+    }
+
+    #changelist-filter {
+        float: none;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    #changelist-form .actions {
+        float: none;
+    }
+
+    #changelist .actions label {
+        float: none;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered .actions, .filtered div.xfull {
+        margin-right: 0;
+    }
+}
+
+/* Improve form layout on smaller screens */
+@media (max-width: 1024px) {
+    .form-row > div {
+        width: 100% !important;
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    .form-row > div.datetime {
+        width: 100% !important;
+    }
+
+    .form-row > div > input, .form-row > div > textarea, .form-row > div > select {
+        width: 100% !important;
+    }
+
+    .aligned label {
+        width: 100%;
+        padding: 0 0 5px 0;
+    }
+
+    .aligned label + p, .aligned label + div.help, .aligned label + div.readonly {
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+/* Adjust login form for mobile */
+@media (max-width: 767px) {
+    .login #container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .login #content {
+        padding: 15px;
+    }
+
+    .login .form-row {
+        padding: 5px 0;
+    }
+
+    .login .submit-row {
+        padding: 10px 0 0 0;
+    }
+}

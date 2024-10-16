@@ -1,0 +1,81 @@
+{% extends 'bookings/base.html' %}
+{% block content %}
+<div class="booking-confirmation">
+    <h2 class="text-center mb-4">Booking Confirmation</h2>
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+            <h3 class="text-success">Your booking has been confirmed!</h3>
+            <h4>Thank you!</h4>
+        </div>
+        
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-outline-info btn-block mb-3" data-toggle="modal" data-target="#billDetailsModal">
+            View Bill Details
+        </button>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="billDetailsModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-light">
+                    <!-- Modal Header -->
+                    <div class="modal-header border-info">
+                        <h4 class="modal-title">Bill Details</h4>
+                        <button type="button" class="close text-light" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-dark text-light"><b>Bus name:</b> {{book.bus_name}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Starting point:</b> {{book.source}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Destination point:</b> {{book.dest}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Number of seats:</b> {{book.nos}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Price:</b> {{book.price}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Cost:</b> {{cost}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Date:</b> {{book.date}}</li>
+                            <li class="list-group-item bg-dark text-light"><b>Time:</b> {{book.time}}</li>
+                        </ul>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer border-info">
+                        <button type="button" class="btn btn-outline-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    .booking-confirmation {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .modal-content {
+        border: 2px solid #00ffff;
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    .list-group-item {
+        border-color: #00ffff;
+    }
+    .btn-outline-info {
+        color: #00ffff;
+        border-color: #00ffff;
+    }
+    .btn-outline-info:hover {
+        background-color: #00ffff;
+        color: #000033;
+    }
+    @media (max-width: 576px) {
+        .modal-dialog {
+            margin: 0.5rem;
+        }
+    }
+</style>
+{% endblock %}
